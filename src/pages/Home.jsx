@@ -37,27 +37,17 @@ function Home() {
         <div className="section-icon">🌐</div>
         <h2>API Information</h2>
         <div className="api-info">
-          <h3>Primary API: Fixer.io</h3>
-          <p>
-            <strong>Endpoint:</strong> <code>https://api.fixer.io/latest</code>
-          </p>
-          <p>
-            <strong>Description:</strong> Fixer provides real-time foreign exchange rates
-            for 170+ world currencies. The API is powered by data from financial institutions
-            and banks.
-          </p>
-          <p>
-            <strong>Note:</strong> Fixer requires an API key. For development without a key,
-            the app falls back to ExchangeRate-API, a free alternative.
-          </p>
-          
-          <h3 className="fallback-api">Fallback API: ExchangeRate-API</h3>
+          <h3>ExchangeRate-API</h3>
           <p>
             <strong>Endpoint:</strong> <code>https://api.exchangerate-api.com/v4/latest</code>
           </p>
           <p>
             <strong>Description:</strong> Free exchange rate API with no authentication required.
-            Provides reliable currency conversion data for development and testing.
+            Provides reliable, real-time currency conversion data for 150+ world currencies.
+          </p>
+          <p>
+            <strong>Features:</strong> No API key needed, generous rate limits, and fast response times.
+            Perfect for development and production use.
           </p>
         </div>
       </section>

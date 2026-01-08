@@ -1,19 +1,8 @@
 import axios from 'axios';
 
-// Note: Fixer.io requires an API key. Free tier available at https://fixer.io/
-// For development, you can use exchangerate-api.com as an alternative (no key required for basic usage)
-// Or use a mock service for testing
-
-const FIXER_API_KEY = import.meta.env.VITE_FIXER_API_KEY || 'YOUR_API_KEY_HERE';
-const BASE_URL = 'https://api.fixer.io/latest';
-
-// Alternative free API (no key required)
 const EXCHANGE_RATE_API_URL = 'https://api.exchangerate-api.com/v4/latest';
 
 class CurrencyService {
-  constructor() {
-    this.useFixerAPI = false; // Set to true if you have a Fixer API key
-  }
 
   /**
    * Get latest exchange rates
@@ -22,19 +11,8 @@ class CurrencyService {
    */
   async getLatestRates(base = 'USD') {
     try {
-      if (this.useFixerAPI && FIXER_API_KEY !== 'YOUR_API_KEY_HERE') {
-        const response = await axios.get(BASE_URL, {
-          params: {
-            access_key: FIXER_API_KEY,
-            base: base
-          }
-        });
-        return response.data;
-      } else {
-        // Use free alternative API
-        const response = await axios.get(`${EXCHANGE_RATE_API_URL}/${base}`);
-        return response.data;
-      }
+      const response = await axios.get(`${EXCHANGE_RATE_API_URL}/${base}`);
+      return response.data;
     } catch (error) {
       console.error('Error fetching exchange rates:', error);
       throw new Error('Failed to fetch exchange rates. Please try again later.');
