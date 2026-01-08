@@ -1,0 +1,98 @@
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #50c878;
+  --danger-color: #e74c3c;
+  --dark-bg: #1a1a2e;
+  --card-bg: #16213e;
+  --text-light: #ffffff;
+  --text-gray: #b8c1cc;
+  --border-color: #2d3561;
+  --hover-color: #5ba3f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  color: var(--text-light);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Utility Classes */
+.loading {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+  color: var(--text-gray);
+}
+
+.error {
+  background-color: rgba(231, 76, 60, 0.1);
+  border: 1px solid var(--danger-color);
+  color: var(--danger-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  animation: fadeIn 0.3s ease;
+}
+
+.success {
+  background-color: rgba(80, 200, 120, 0.1);
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+}
